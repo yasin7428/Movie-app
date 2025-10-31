@@ -1,0 +1,15 @@
+/* src/components/pages/Home.css */
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap; /* Taaki cards ek line me fit na hone par neeche aa jayein */
+  justify-content: center; /* Cards ko center me rakhega */
+  gap: 1rem; /* Cards ke beech me thodi jagah */
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    gap: 0.5rem;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,25 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg, #ffffff);
+  overflow-x: hidden;
+}
+
+/* Main content area spacing for pages */
+.layout > .page {
+  flex: 1 0 auto;
+  padding: 1rem;
+}
+
+/* Header/footer placeholders (optional) */
+.header-placeholder {
+  flex: 0 0 auto;
+}
+
+/* Small responsive tweaks */
+@media (max-width: 600px) {
+  .layout > .page {
+    padding: 0.5rem;
+  }
+}

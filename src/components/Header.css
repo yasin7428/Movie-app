@@ -1,0 +1,61 @@
+/* src/components/Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Logo ek taraf, search dusri taraf */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e50914; /* Netflix jaisa red */
+  text-decoration: none;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #e50914;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: self-start;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+
+  .search-input {
+    width: 100%;
+    border-radius: 50px;
+  }
+}
