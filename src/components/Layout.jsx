@@ -5,6 +5,7 @@ import Header from './Header';
 import Home from "./pages/Home.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
 import Search from "./pages/Search.jsx";
+import TVShowDetails from "./pages/TVShowDetails.jsx";
 
 import './Layout.css';
 
@@ -19,6 +20,7 @@ function Layout() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/search/:query" element={<Search/>} />
+        <Route path="/tv/:id" element={<TVShowDetails />} />
       </Routes>
 
       {/* Jab hum future me Footer banayenge, to use bhi yahin add kar denge */}

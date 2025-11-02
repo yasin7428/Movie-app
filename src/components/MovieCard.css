@@ -6,17 +6,18 @@
   background-color: #1a1a1a;
   color: white;
   border-radius: 10px;
-  /* overflow: hidden;  */
+  overflow: hidden; /* <-- Ye zaroori hai image ke kone kaatne ke liye */
   margin: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  
+  /* Ye Link (<a> tag) ke default style ko hatane ke liye hai */
+  text-decoration: none;
+  flex-shrink: 0; 
 }
 
-.movie-link {
-  border-radius: 10px;
-  overflow: hidden;
-}
+/* Humne .movie-link class ko poori tarah se hata diya hai */
 
 .movie-card:hover {
   transform: scale(1.05);
@@ -27,24 +28,25 @@
   width: 100%;
   height: 300px; /* Sab poster ek height ke honge */
   object-fit: cover; /* Image ko stretch nahi karega, cover karega */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  
+  /* Humne yahan se border-radius hata diya hai, 
+     kyunki ab parent (.movie-card) me overflow: hidden hai */
 }
 
 .movie-info {
   padding: 1rem;
-  color: aliceblue;
+  color: aliceblue; /* Ye accha lag raha hai! */
 }
 
 .movie-info h3 {
   font-size: 1.1rem;
   margin: 0;
-  /* Agar title lamba hai to use cut kar dega */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* Aapki media query ekdum perfect thi */
 @media (max-width: 768px) {
   .movie-card {
     margin: 0.1rem;
@@ -52,5 +54,19 @@
   }
   .movie-card img {
     height: auto;
+  }
+}
+
+/* Ye Home.css se yahan move karna behtar hai */
+@media (max-width: 480px) {
+  .movie-card {
+    width: 46%; 
+    margin-right: 10px;
+  }
+  .movie-card img {
+    height: 250px;
+  }
+  .movie-info h3 {
+    font-size: 0.9rem;
   }
 }

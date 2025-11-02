@@ -40,9 +40,28 @@ export const getSimilarMovies = (movieId) => {
   return fetchFromTMDB(`/movie/${movieId}/similar`);
 };
 
+export const getTrendingTV = () => {
+  return fetchFromTMDB('/trending/tv/day');
+};
 
-export const searchMovies = (query) => {
-  return fetchFromTMDB(`/search/movie?query=${query}`);
+export const getTopActionMovies = () => {
+  return fetchFromTMDB('/discover/movie?with_genres=28&sort_by=popularity.desc');
+};
+
+export const getTrendingAnime = () => {
+  return fetchFromTMDB('/discover/movie?with_genres=16&with_keywords=210024&sort_by=popularity.desc');
+};
+
+export const searchMulti = (query) => {
+  return fetchFromTMDB(`/search/multi?query=${query}`);
+};
+
+export const getTVShowDetails = (tvId) => {
+  return fetchFromTMDB(`/tv/${tvId}`);
+};
+
+export const getTVSeasonDetails = (tvId, seasonNumber) => {
+  return fetchFromTMDB(`/tv/${tvId}/season/${seasonNumber}`);
 };
 
 export const BACKDROP_BASE_URL = 'https://image.tmdb.org/t/p/w1280';

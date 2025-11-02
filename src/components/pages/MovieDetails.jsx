@@ -104,7 +104,7 @@ function MovieDetails() {
           </div>
           <div className="similar-section">
             <h2>Similar Movies</h2>
-            <div className="movie-grid">
+            <div className="similar-list">
               {similarMovies.slice(0, 10).map((similarMovie) => (
                 <MovieCard key={similarMovie.id} movie={similarMovie} />
               ))}

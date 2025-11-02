@@ -4,7 +4,7 @@ import './App.css'; // Is file ko humne pehle hi khaali kar diya tha
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Layout /> {/* Dekho, ab sirf ek hi component hai! */}
     </div>
   );
