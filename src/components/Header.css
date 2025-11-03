@@ -8,8 +8,34 @@
   background-color: #1a1a1a;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   gap: 10px;
-  
 }
+
+.header-left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  position: relative;
+  color: rgb(211, 205, 205);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  color: #fffbfc;
+}
+
+
 
 .logo {
   font-size: 1.5rem;
@@ -26,7 +52,7 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: 1px solid #333;
-  border-radius: 5px;
+  border-radius: 50px;
   background-color: #222;
   color: white;
   outline: none;

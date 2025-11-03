@@ -64,6 +64,39 @@ export const getTVSeasonDetails = (tvId, seasonNumber) => {
   return fetchFromTMDB(`/tv/${tvId}/season/${seasonNumber}`);
 };
 
+export const getPopularMovies = () => {
+  return fetchFromTMDB('/movie/popular');
+};
+
+export const getTopRatedMovies = () => {
+  return fetchFromTMDB('/movie/top_rated');
+};
+
+export const getPopularTVShows = () => {
+  return fetchFromTMDB('/tv/popular');
+};
+
+export const getTopRatedTVShows = () => {
+  return fetchFromTMDB('/tv/top_rated');
+};
+
+export const getPopularAnime = () => {
+  return fetchFromTMDB('/discover/movie?with_genres=16&sort_by=popularity.desc');
+};
+
+export const getTopRatedAnime = () => {
+  return fetchFromTMDB('/discover/movie?with_genres=16&sort_by=vote_average.desc&vote_count.gte=200');
+};
+
+export const getTopAnimeSeries = () => {
+  return fetchFromTMDB('/discover/tv?with_genres=16&with_original_language=ja&sort_by=popularity.desc')
+};
+
+export const getActionAnimeSeries = () => {
+  return fetchFromTMDB('/discover/tv?with_genres=16,10759&without_genres=10762&with_original_language=ja&sort_by=popularity.desc')
+};
+
+
 export const BACKDROP_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
 
 

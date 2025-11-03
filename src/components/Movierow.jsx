@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import TVCard from "./TVCard";
 import "./Movierow.css";
 
-function Movierow({ title, fetchFunction }) {
+function Movierow({ title, fetchFunction, defaultType = "movie" }) {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -33,9 +33,13 @@ function Movierow({ title, fetchFunction }) {
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="movie-list">
         {results.map((result) => {
-          if (result.media_type === "movie" || !result.media_type) {
+         let type = result.media_type;
+         if (!type) {
+          type = defaultType;
+         }
+          if (type === "movie") {
             return <MovieCard key={result.id} movie={result} />;
-          } else if (result.media_type === "tv") {
+          } else if (type === "tv") {
             return <TVCard key={result.id} show={result} />;
           }
           return null;
